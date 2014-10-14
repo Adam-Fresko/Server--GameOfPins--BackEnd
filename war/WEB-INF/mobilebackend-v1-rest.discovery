@@ -1,0 +1,561 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"MKGA2miAJpVGF7yQTQhsoDXpye8/F1kq8xZFQhddP-N9zf51AmuHEZQ\"",
+ "discoveryVersion": "v1",
+ "id": "mobilebackend:v1",
+ "name": "mobilebackend",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "google.com",
+ "ownerName": "google.com",
+ "packagePath": "cloud.backend.android",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://spring-ember-643.appspot.com/_ah/api/mobilebackend/v1/",
+ "basePath": "/_ah/api/mobilebackend/v1/",
+ "rootUrl": "https://spring-ember-643.appspot.com/_ah/api/",
+ "servicePath": "mobilebackend/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "BlobAccess": {
+   "id": "BlobAccess",
+   "type": "object",
+   "properties": {
+    "accessUrl": {
+     "type": "string"
+    },
+    "mandatoryHeaders": {
+     "type": "string"
+    },
+    "shortLivedUrl": {
+     "type": "string"
+    }
+   }
+  },
+  "EntityDto": {
+   "id": "EntityDto",
+   "type": "object",
+   "properties": {
+    "createdAt": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "createdBy": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "kindName": {
+     "type": "string"
+    },
+    "owner": {
+     "type": "string"
+    },
+    "properties": {
+     "$ref": "_any"
+    },
+    "updatedAt": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "updatedBy": {
+     "type": "string"
+    }
+   }
+  },
+  "EntityListDto": {
+   "id": "EntityListDto",
+   "type": "object",
+   "properties": {
+    "entries": {
+     "type": "array",
+     "items": {
+      "$ref": "EntityDto"
+     }
+    }
+   }
+  },
+  "Filter": {
+   "id": "Filter",
+   "type": "object"
+  },
+  "FilterDto": {
+   "id": "FilterDto",
+   "type": "object",
+   "properties": {
+    "datastoreFilter": {
+     "$ref": "Filter"
+    },
+    "operator": {
+     "$ref": "Op"
+    },
+    "subfilters": {
+     "type": "array",
+     "items": {
+      "$ref": "FilterDto"
+     }
+    },
+    "values": {
+     "type": "array",
+     "items": {
+      "$ref": "_any"
+     }
+    }
+   }
+  },
+  "Op": {
+   "id": "Op",
+   "type": "string",
+   "enum": [
+    "AND",
+    "EQ",
+    "GE",
+    "GT",
+    "IN",
+    "LE",
+    "LT",
+    "NE",
+    "OR"
+   ],
+   "enumDescriptions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  "QueryDto": {
+   "id": "QueryDto",
+   "type": "object",
+   "properties": {
+    "filterDto": {
+     "$ref": "FilterDto"
+    },
+    "kindName": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "queryId": {
+     "type": "string"
+    },
+    "regId": {
+     "type": "string"
+    },
+    "scope": {
+     "$ref": "Scope"
+    },
+    "sortAscending": {
+     "type": "boolean"
+    },
+    "sortedPropertyName": {
+     "type": "string"
+    },
+    "subscriptionDurationSec": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  },
+  "Scope": {
+   "id": "Scope",
+   "type": "string",
+   "enum": [
+    "FUTURE",
+    "FUTURE_AND_PAST",
+    "PAST"
+   ],
+   "enumDescriptions": [
+    "",
+    "",
+    ""
+   ]
+  },
+  "_any": {
+   "id": "_any",
+   "type": "any"
+  }
+ },
+ "resources": {
+  "blobEndpoint": {
+   "methods": {
+    "deleteBlob": {
+     "id": "mobilebackend.blobEndpoint.deleteBlob",
+     "path": "blobs/{bucketName}/{objectPath}",
+     "httpMethod": "DELETE",
+     "parameters": {
+      "bucketName": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "objectPath": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "bucketName",
+      "objectPath"
+     ],
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "getDownloadUrl": {
+     "id": "mobilebackend.blobEndpoint.getDownloadUrl",
+     "path": "blobs/downloads/{bucketName}/{objectPath}",
+     "httpMethod": "GET",
+     "parameters": {
+      "bucketName": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "objectPath": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "bucketName",
+      "objectPath"
+     ],
+     "response": {
+      "$ref": "BlobAccess"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "getUploadUrl": {
+     "id": "mobilebackend.blobEndpoint.getUploadUrl",
+     "path": "blobs/uploads/{bucketName}/{objectPath}",
+     "httpMethod": "GET",
+     "parameters": {
+      "accessMode": {
+       "type": "string",
+       "required": true,
+       "enum": [
+        "PRIVATE",
+        "PUBLIC_READ",
+        "PUBLIC_READ_FOR_APP_USERS"
+       ],
+       "enumDescriptions": [
+        "",
+        "",
+        ""
+       ],
+       "location": "query"
+      },
+      "bucketName": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "contentType": {
+       "type": "string",
+       "location": "query"
+      },
+      "objectPath": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "bucketName",
+      "objectPath",
+      "accessMode"
+     ],
+     "response": {
+      "$ref": "BlobAccess"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    }
+   }
+  },
+  "endpointV1": {
+   "methods": {
+    "delete": {
+     "id": "mobilebackend.endpointV1.delete",
+     "path": "CloudEntities/{kind}/{id}",
+     "httpMethod": "DELETE",
+     "parameters": {
+      "id": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "kind": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "kind",
+      "id"
+     ],
+     "response": {
+      "$ref": "EntityDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "deleteAll": {
+     "id": "mobilebackend.endpointV1.deleteAll",
+     "path": "CloudEntities/deleteAll",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "EntityListDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityListDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "get": {
+     "id": "mobilebackend.endpointV1.get",
+     "path": "CloudEntities/{kind}/{id}",
+     "httpMethod": "GET",
+     "parameters": {
+      "id": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "kind": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "kind",
+      "id"
+     ],
+     "response": {
+      "$ref": "EntityDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "getAll": {
+     "id": "mobilebackend.endpointV1.getAll",
+     "path": "CloudEntities/getAll",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "EntityListDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityListDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "insert": {
+     "id": "mobilebackend.endpointV1.insert",
+     "path": "CloudEntities/insert/{kind}",
+     "httpMethod": "POST",
+     "parameters": {
+      "kind": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "kind"
+     ],
+     "request": {
+      "$ref": "EntityDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "insertAll": {
+     "id": "mobilebackend.endpointV1.insertAll",
+     "path": "CloudEntities/insertAll",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "EntityListDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityListDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "list": {
+     "id": "mobilebackend.endpointV1.list",
+     "path": "CloudEntities/list",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "QueryDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityListDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "patch": {
+     "id": "mobilebackend.endpointV1.patch",
+     "path": "CloudEntities/update/{kind}",
+     "httpMethod": "PATCH",
+     "parameters": {
+      "id": {
+       "type": "string",
+       "required": true,
+       "location": "query"
+      },
+      "kind": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "kind",
+      "id"
+     ],
+     "request": {
+      "$ref": "EntityDto"
+     },
+     "response": {
+      "$ref": "EntityDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "update": {
+     "id": "mobilebackend.endpointV1.update",
+     "path": "CloudEntities/update/{kind}",
+     "httpMethod": "POST",
+     "parameters": {
+      "kind": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "kind"
+     ],
+     "request": {
+      "$ref": "EntityDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "updateAll": {
+     "id": "mobilebackend.endpointV1.updateAll",
+     "path": "CloudEntities/updateAll",
+     "httpMethod": "POST",
+     "request": {
+      "$ref": "EntityListDto",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "EntityListDto"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    }
+   }
+  }
+ }
+}
