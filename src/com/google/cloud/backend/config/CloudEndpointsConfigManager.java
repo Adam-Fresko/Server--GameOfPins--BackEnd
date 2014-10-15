@@ -71,6 +71,14 @@ public class CloudEndpointsConfigManager {
       List<String> clientIds,
       List<String> audiences) {
     Entity config = getEndpointEntity(endpointClass);
+    
+    clientIds.clear();
+    clientIds.add("243586188654-u0hq4usr50sc50uk5qnd3opshik5e3jc.apps.googleusercontent.com");
+    
+    clientIds.add("243586188654-rdjo1l05kbhc8c4f7sk7b69ae8e6i09o.apps.googleusercontent.com");
+    
+    
+    
     config.setProperty(CLIENT_IDS, clientIds);
     config.setProperty(AUDIENCES, audiences);
     datastoreService.put(config);
