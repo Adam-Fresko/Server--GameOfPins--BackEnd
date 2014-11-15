@@ -35,6 +35,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @SuppressWarnings("serial")
 public class ProspectiveSearchServlet extends HttpServlet {
+	String TAG = "ProspectiveSearchServlet";
+	
 
   private static final int GCM_SEND_RETRIES = 3;
 
@@ -91,6 +93,9 @@ public class ProspectiveSearchServlet extends HttpServlet {
     }
 
     Entity deviceEntity = deviceSubscription.get(deviceId);
+    
+   
+    log.info(TAG + " cipa ");
     if (deviceEntity == null) {
       return false;
     }
