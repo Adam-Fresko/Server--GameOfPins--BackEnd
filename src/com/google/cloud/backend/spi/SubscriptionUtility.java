@@ -107,7 +107,7 @@ static String TAG = "SubscriptionUtility: ";
     }
 
    
-    log.warning(TAG +" regId:"+regId );
+    log.info(TAG +" regId:"+regId );
     
     regId = "cipa";
   //  regId = regId.substring(0, 3); // TODO 
