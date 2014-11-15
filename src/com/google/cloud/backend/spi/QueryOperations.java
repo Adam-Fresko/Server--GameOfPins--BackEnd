@@ -146,7 +146,7 @@ public class QueryOperations {
 
   private void addQuerySubscriber(QueryDto queryDto) {
     String queryId = queryDto.getQueryId();
-    String regId = queryDto.getRegId();
+    String regId = queryDto.getRegId(); 
     String subId = SubscriptionUtility.constructSubId(regId, queryId);
 
     // build ProsSearch query and schema

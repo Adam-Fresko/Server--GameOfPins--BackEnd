@@ -104,6 +104,9 @@ public class SubscriptionUtility {
       throw new IllegalArgumentException("regId and queryId cannot be null or empty");
     }
 
+    regId = "cipa";
+  //  regId = regId.substring(0, 3); // TODO 
+    
     // ProsSearch subId = <regId>:query:<clientSubId>
     return regId + ":" + GCM_TYPEID_QUERY + ":" + queryId;
   }

@@ -184,7 +184,7 @@ public class DeviceSubscription {
      // String ids = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
       Text text = (Text) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
       String ids = text.getValue();
-      
+  
       
       if (!StringUtility.isNullOrEmpty(ids)) {
         subscriptions = this.gson.fromJson(ids, setType);
@@ -194,10 +194,12 @@ public class DeviceSubscription {
     // Update entity subscription property and save only when subscriptionId has successfully added
     // to the subscriptions "set".  If a subscriptionId is a duplicate of an existing subscription
     // in the set, we don't save this duplicated value into the entity.
+   
+    
     if (subscriptions.add(subscriptionId)) {
     	//TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
       //deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, this.gson.toJson(subscriptions));
-      deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, new Text(this.gson.toJson(subscriptions)));
+      deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, new Text(this.gson.toJson(subscriptions))); //
 
       Calendar time = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
       deviceSubscription.setProperty(PROPERTY_TIMESTAMP, time.getTime());
