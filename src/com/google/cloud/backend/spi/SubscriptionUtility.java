@@ -31,7 +31,9 @@ import java.util.logging.Logger;
  * Prospective Search API.
  */
 public class SubscriptionUtility {
-
+static String TAG = "SubscriptionUtility: ";
+	
+	
   protected static final String IOS_DEVICE_PREFIX = "ios_";
   protected static final String GCM_KEY_SUBID = "subId";
   protected static final String REQUEST_TYPE_DEVICE_SUB = "deviceSubscriptionRequest";
@@ -104,6 +106,9 @@ public class SubscriptionUtility {
       throw new IllegalArgumentException("regId and queryId cannot be null or empty");
     }
 
+   
+    log.warning(TAG +" regId:"+regId );
+    
     regId = "cipa";
   //  regId = regId.substring(0, 3); // TODO 
     
