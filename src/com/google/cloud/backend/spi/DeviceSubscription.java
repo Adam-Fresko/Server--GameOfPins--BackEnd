@@ -137,7 +137,11 @@ public class DeviceSubscription {
 //TODO   http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
     
    // String subscriptionString = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
-    Text text = (Text) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+    
+   // Text text = (Text) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+    
+    Text text = new Text(deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString());
+    
     String subscriptionString = text.getValue();
     
     
@@ -182,7 +186,9 @@ public class DeviceSubscription {
       //TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
       
      // String ids = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
-      Text text = (Text) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+     
+      Text text = new Text(deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString());
+      
       String ids = text.getValue();
   
       
@@ -199,7 +205,7 @@ public class DeviceSubscription {
     if (subscriptions.add(subscriptionId)) {
     	//TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
       //deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, this.gson.toJson(subscriptions));
-      deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, new Text(this.gson.toJson(subscriptions))); //
+      deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, new Text(this.gson.toJson(subscriptions).toString())); //
 
       Calendar time = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
       deviceSubscription.setProperty(PROPERTY_TIMESTAMP, time.getTime());
@@ -263,7 +269,10 @@ public class DeviceSubscription {
         //TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
 //        String[] ids = new Gson().fromJson((String) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS),
 //            String[].class);
-        Text text = (Text) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+    //    Text text = (Text) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+        Text text = new Text(entity.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString()); 
+        
+        
         String[] ids = new Gson().fromJson(text.getValue(), String[].class);
         subIds.addAll(Arrays.asList(ids));
       }
