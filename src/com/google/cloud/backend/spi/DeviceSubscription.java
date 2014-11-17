@@ -63,7 +63,7 @@ public class DeviceSubscription {
    */
   public static final String PROPERTY_TIMESTAMP = "TimeStamp";
   private static final Type setType = new TypeToken<Set<String>>() {}.getType();
-
+  private static final Type setTypeText = new TypeToken<Set<Text>>() {}.getType();
   /**
    * Device Subscription entity name.
    */
@@ -193,7 +193,7 @@ public class DeviceSubscription {
   
       
       if (!StringUtility.isNullOrEmpty(ids)) {
-        subscriptions = this.gson.fromJson(ids, setType);
+        subscriptions = this.gson.fromJson(ids, setTypeText);  //  TODO subscriptions = this.gson.fromJson(ids, setType);
       }
     }
 
