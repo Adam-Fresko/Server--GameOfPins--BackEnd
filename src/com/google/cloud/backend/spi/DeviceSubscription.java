@@ -189,11 +189,13 @@ public class DeviceSubscription {
      
       Text text = new Text(deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString());
       
-      String ids = text.getValue();
+      String ids = text.getValue().toString();
   
       
       if (!StringUtility.isNullOrEmpty(ids)) {
-        subscriptions = this.gson.fromJson(ids, setTypeText);  //  TODO subscriptions = this.gson.fromJson(ids, setType);
+    	//  String[] subs = text.toString().split(",");
+    	  
+        subscriptions =  this.gson.fromJson(ids, setType);  //  TODO subscriptions = this.gson.fromJson(ids, setType);
       }
     }
 
@@ -273,7 +275,8 @@ public class DeviceSubscription {
         Text text = new Text(entity.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString()); 
         String[] s = text.toString().split(",");
         
-       // String[] ids = new Gson().fromJson(, String[].class);
+       //TODO String[] ids = new Gson().fromJson(, String[].class);
+         //String[] ids = new Gson().fromJson(, String[].class);   
         subIds.addAll(Arrays.asList(s));
       }
     }
