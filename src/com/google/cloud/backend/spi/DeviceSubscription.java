@@ -271,10 +271,10 @@ public class DeviceSubscription {
 //            String[].class);
     //    Text text = (Text) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS);
         Text text = new Text(entity.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString()); 
+        String[] s = text.toString().split(",");
         
-        
-        String[] ids = new Gson().fromJson(text.getValue(), String[].class);
-        subIds.addAll(Arrays.asList(ids));
+       // String[] ids = new Gson().fromJson(, String[].class);
+        subIds.addAll(Arrays.asList(s));
       }
     }
 
