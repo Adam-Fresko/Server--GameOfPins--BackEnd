@@ -43,7 +43,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TimeZone;
-
 /**
  * Handles the persistence of each device and Perspective Search API subscription.
  */
@@ -63,7 +62,7 @@ public class DeviceSubscription {
    */
   public static final String PROPERTY_TIMESTAMP = "TimeStamp";
   private static final Type setType = new TypeToken<Set<String>>() {}.getType();
-  private static final Type setTypeText = new TypeToken<Set<Text>>() {}.getType();
+
   /**
    * Device Subscription entity name.
    */
@@ -136,13 +135,9 @@ public class DeviceSubscription {
     }
 //TODO   http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
     
-   // String subscriptionString = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
-    
+    String subscriptionString = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
    // Text text = (Text) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
-    
-    Text text = new Text(deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString());
-    
-    String subscriptionString = text.getValue();
+   // String subscriptionString = text.getValue().toString();
     
     
     if (StringUtility.isNullOrEmpty(subscriptionString)) {
@@ -185,29 +180,23 @@ public class DeviceSubscription {
       // Update the existing subscription list
       //TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
       
-     // String ids = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
-     
-      Text text = new Text(deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString());
+     String ids = (String) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+     // Text text = (Text) deviceSubscription.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+     // String ids = text.getValue().toString();
       
-      String ids = text.getValue().toString();
-  
       
       if (!StringUtility.isNullOrEmpty(ids)) {
-    	//  String[] subs = text.toString().split(",");
-    	  
-        subscriptions =  this.gson.fromJson(ids, setType);  //  TODO subscriptions = this.gson.fromJson(ids, setType);
+        subscriptions = this.gson.fromJson(ids, setType);
       }
     }
 
     // Update entity subscription property and save only when subscriptionId has successfully added
     // to the subscriptions "set".  If a subscriptionId is a duplicate of an existing subscription
     // in the set, we don't save this duplicated value into the entity.
-   
-    
     if (subscriptions.add(subscriptionId)) {
     	//TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
-      //deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, this.gson.toJson(subscriptions));
-      deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, new Text(this.gson.toJson(subscriptions).toString())); //
+      deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, this.gson.toJson(subscriptions));
+     // deviceSubscription.setProperty(PROPERTY_SUBSCRIPTION_IDS, new Text(this.gson.toJson(subscriptions)));
 
       Calendar time = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
       deviceSubscription.setProperty(PROPERTY_TIMESTAMP, time.getTime());
@@ -269,15 +258,11 @@ public class DeviceSubscription {
       for (Entity entity : entities) {
         keys.add(entity.getKey());
         //TODO  http://stackoverflow.com/questions/22122647/mobile-backend-starter-subscribetocloudmessage-will-not-work/22737573#22737573
-//        String[] ids = new Gson().fromJson((String) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS),
-//            String[].class);
-    //    Text text = (Text) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS);
-        Text text = new Text(entity.getProperty(PROPERTY_SUBSCRIPTION_IDS).toString()); 
-        String[] s = text.toString().split(",");
-        
-       //TODO String[] ids = new Gson().fromJson(, String[].class);
-         //String[] ids = new Gson().fromJson(, String[].class);   
-        subIds.addAll(Arrays.asList(s));
+        String[] ids = new Gson().fromJson((String) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS),
+            String[].class);
+  //      Text text = (Text) entity.getProperty(PROPERTY_SUBSCRIPTION_IDS);
+   //     String[] ids = new Gson().fromJson(text.getValue(), String[].class);
+        subIds.addAll(Arrays.asList(ids));
       }
     }
 
@@ -344,3 +329,4 @@ public class DeviceSubscription {
     }
   }
 }
+
