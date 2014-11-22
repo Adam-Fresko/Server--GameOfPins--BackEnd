@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 import javax.inject.Named;
 
@@ -31,7 +32,13 @@ import javax.inject.Named;
  * API and Datastore as backend.
  */
 public class CrudOperations {
-
+	
+	String TAG = "CrudOperations: ";
+	
+	
+	private static final Logger log = Logger
+			.getLogger(ProspectiveSearchServlet.class.getName());
+	
   private static final String CLOUD_ENTITY_ID_PREFIX = "CE:";
 
   private static final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
@@ -96,7 +103,12 @@ public class CrudOperations {
     for (Entity e : allEntities) {
       convertDatePropertyToEpochTime(e, EntityDto.PROP_CREATED_AT);
       convertDatePropertyToEpochTime(e, EntityDto.PROP_UPDATED_AT);
+      
+   
+      log.info(TAG + "Match kind: " +   e.getKind());
+      
       prosSearch.match(e, QueryOperations.PROS_SEARCH_DEFAULT_TOPIC);
+     
     }
 
     // return a list of the updated EntityDto

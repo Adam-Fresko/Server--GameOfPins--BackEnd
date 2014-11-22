@@ -31,6 +31,7 @@ import com.google.cloud.backend.beans.QueryDto;
 import com.google.cloud.backend.beans.QueryDto.Scope;
 import com.google.cloud.backend.config.StringUtility;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,8 @@ public class QueryOperations {
   }
 
   private static final QueryOperations _instance = new QueryOperations();
+
+private String TAG = "QueryOperations";
 
   private QueryOperations() {
   }
@@ -153,10 +156,17 @@ public class QueryOperations {
     String query = queryDto.buildProsSearchQuery();
     Map<String, FieldType> schema = queryDto.buildProsSearchSchema();
 
+    List<FieldType> list = new ArrayList<FieldType>(schema.values());
+    
+    for (int i = 0; i < list.size(); i++) {
+    	 log.info(TAG + " : schema: " + i + " " + list.get(i));
+	}
+    
+    
     // subscribe
     int duration = queryDto.getSubscriptionDurationSec() == null ? PROS_SEARCH_DURATION_SEC
         : queryDto.getSubscriptionDurationSec();
-    prosSearch.subscribe(PROS_SEARCH_DEFAULT_TOPIC, subId, duration, query, schema);
+    prosSearch.subscribe(PROS_SEARCH_DEFAULT_TOPIC, subId, duration, query, schema); // TODO
     log.info("addQuerySubscriber: query: " + query + ", schema: " + schema + ", duration: "
         + duration);
 

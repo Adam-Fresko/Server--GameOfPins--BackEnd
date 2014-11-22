@@ -111,7 +111,7 @@ static String TAG = "SubscriptionUtility: ";
     
    // regId = "cipa";
    regId = regId.substring(0, 3); // TODO 
-   regId ="cipa" + regId;
+  // regId =  regId;
     // ProsSearch subId = <regId>:query:<clientSubId>
     return regId + ":" + GCM_TYPEID_QUERY + ":" + queryId;
     //return regId + ":" + GCM_TYPEID_QUERY + ":" + queryId;
