@@ -9,10 +9,17 @@
   -->
   
   
-  <datastore-index kind="G_G_G_G_Categories_Main" ancestor="false">
+  <datastore-index kind="G_G_G_G_Categories" ancestor="false">
     <property name="A_Language" direction="asc"/>
      <property name="A_Country" direction="asc"/>
-     <property name="A_ID" direction="asc"/>
+    
+    <property name="_createdAt" direction="desc"/>
+  </datastore-index>
+  
+  
+  <datastore-index kind="G_G_G_G_Categories_Main" ancestor="false">
+     <property name="A_Language" direction="asc"/>
+     <property name="A_Country" direction="asc"/>
     <property name="_createdAt" direction="desc"/>
   </datastore-index>
   
@@ -24,8 +31,6 @@
      <property name="A_Source_ID" direction="asc"/>
     <property name="_createdAt" direction="desc"/>
   </datastore-index>
-  
-  
   
   
 </datastore-indexes>
