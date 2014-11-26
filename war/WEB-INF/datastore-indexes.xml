@@ -23,6 +23,13 @@
     <property name="_createdAt" direction="desc"/>
   </datastore-index>
   
+  <datastore-index kind="G_G_G_G_Categories_Sub" ancestor="false">
+     <property name="A_Language" direction="asc"/>
+     <property name="A_Country" direction="asc"/>
+      <property name="C_Main" direction="asc"/>
+    <property name="_createdAt" direction="desc"/>
+  </datastore-index>
+  
   
   <datastore-index kind="G_G_G_G_Categories_Sub" ancestor="false">
     <property name="A_Language" direction="asc"/>
