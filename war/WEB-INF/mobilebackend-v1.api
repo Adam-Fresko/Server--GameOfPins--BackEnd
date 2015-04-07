@@ -27,30 +27,14 @@
   "ownerName" : "google.com",
   "packagePath" : "cloud.backend.android",
   "methods" : {
-    "mobilebackend.endpointV1.updateAll" : {
-      "path" : "CloudEntities/updateAll",
+    "mobilebackend.endpointV1.getAll" : {
+      "path" : "CloudEntities/getAll",
       "httpMethod" : "POST",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.updateAll",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "mobilebackend.endpointV1.deleteAll" : {
-      "path" : "CloudEntities/deleteAll",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.deleteAll",
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.getAll",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -84,75 +68,15 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "mobilebackend.endpointV1.insertAll" : {
-      "path" : "CloudEntities/insertAll",
+    "mobilebackend.endpointV1.list" : {
+      "path" : "CloudEntities/list",
       "httpMethod" : "POST",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.insertAll",
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.list",
       "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "mobilebackend.endpointV1.getAll" : {
-      "path" : "CloudEntities/getAll",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.getAll",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "mobilebackend.endpointV1.update" : {
-      "path" : "CloudEntities/update/{kind}",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.update",
-      "request" : {
-        "parameters" : {
-          "kind" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "mobilebackend.endpointV1.insert" : {
-      "path" : "CloudEntities/insert/{kind}",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.insert",
-      "request" : {
-        "parameters" : {
-          "kind" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
       },
@@ -185,14 +109,90 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "mobilebackend.endpointV1.list" : {
-      "path" : "CloudEntities/list",
+    "mobilebackend.endpointV1.insert" : {
+      "path" : "CloudEntities/insert/{kind}",
       "httpMethod" : "POST",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.list",
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.insert",
+      "request" : {
+        "parameters" : {
+          "kind" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mobilebackend.endpointV1.update" : {
+      "path" : "CloudEntities/update/{kind}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.update",
+      "request" : {
+        "parameters" : {
+          "kind" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mobilebackend.endpointV1.insertAll" : {
+      "path" : "CloudEntities/insertAll",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.insertAll",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mobilebackend.endpointV1.updateAll" : {
+      "path" : "CloudEntities/updateAll",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.updateAll",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mobilebackend.endpointV1.deleteAll" : {
+      "path" : "CloudEntities/deleteAll",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.EndpointV1.deleteAll",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -224,31 +224,6 @@
       },
       "response" : {
         "body" : "empty"
-      }
-    },
-    "mobilebackend.blobEndpoint.getDownloadUrl" : {
-      "path" : "blobs/downloads/{bucketName}/{objectPath}",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl",
-      "request" : {
-        "parameters" : {
-          "bucketName" : {
-            "type" : "string",
-            "required" : true
-          },
-          "objectPath" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
       }
     },
     "mobilebackend.blobEndpoint.getUploadUrl" : {
@@ -284,6 +259,31 @@
           "contentType" : {
             "type" : "string",
             "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mobilebackend.blobEndpoint.getDownloadUrl" : {
+      "path" : "blobs/downloads/{bucketName}/{objectPath}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl",
+      "request" : {
+        "parameters" : {
+          "bucketName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "objectPath" : {
+            "type" : "string",
+            "required" : true
           }
         },
         "body" : "empty"
@@ -433,6 +433,56 @@
       }
     },
     "methods" : {
+      "com.google.cloud.backend.spi.EndpointV1.getAll" : {
+        "request" : {
+          "$ref" : "EntityListDto"
+        },
+        "response" : {
+          "$ref" : "EntityListDto"
+        }
+      },
+      "com.google.cloud.backend.spi.EndpointV1.get" : {
+        "response" : {
+          "$ref" : "EntityDto"
+        }
+      },
+      "com.google.cloud.backend.spi.EndpointV1.list" : {
+        "request" : {
+          "$ref" : "QueryDto"
+        },
+        "response" : {
+          "$ref" : "EntityListDto"
+        }
+      },
+      "com.google.cloud.backend.spi.EndpointV1.delete" : {
+        "response" : {
+          "$ref" : "EntityDto"
+        }
+      },
+      "com.google.cloud.backend.spi.EndpointV1.insert" : {
+        "request" : {
+          "$ref" : "EntityDto"
+        },
+        "response" : {
+          "$ref" : "EntityDto"
+        }
+      },
+      "com.google.cloud.backend.spi.EndpointV1.update" : {
+        "request" : {
+          "$ref" : "EntityDto"
+        },
+        "response" : {
+          "$ref" : "EntityDto"
+        }
+      },
+      "com.google.cloud.backend.spi.EndpointV1.insertAll" : {
+        "request" : {
+          "$ref" : "EntityListDto"
+        },
+        "response" : {
+          "$ref" : "EntityListDto"
+        }
+      },
       "com.google.cloud.backend.spi.EndpointV1.updateAll" : {
         "request" : {
           "$ref" : "EntityListDto"
@@ -449,64 +499,14 @@
           "$ref" : "EntityListDto"
         }
       },
-      "com.google.cloud.backend.spi.EndpointV1.get" : {
-        "response" : {
-          "$ref" : "EntityDto"
-        }
-      },
-      "com.google.cloud.backend.spi.EndpointV1.insertAll" : {
-        "request" : {
-          "$ref" : "EntityListDto"
-        },
-        "response" : {
-          "$ref" : "EntityListDto"
-        }
-      },
-      "com.google.cloud.backend.spi.EndpointV1.getAll" : {
-        "request" : {
-          "$ref" : "EntityListDto"
-        },
-        "response" : {
-          "$ref" : "EntityListDto"
-        }
-      },
-      "com.google.cloud.backend.spi.EndpointV1.update" : {
-        "request" : {
-          "$ref" : "EntityDto"
-        },
-        "response" : {
-          "$ref" : "EntityDto"
-        }
-      },
-      "com.google.cloud.backend.spi.EndpointV1.insert" : {
-        "request" : {
-          "$ref" : "EntityDto"
-        },
-        "response" : {
-          "$ref" : "EntityDto"
-        }
-      },
-      "com.google.cloud.backend.spi.EndpointV1.delete" : {
-        "response" : {
-          "$ref" : "EntityDto"
-        }
-      },
-      "com.google.cloud.backend.spi.EndpointV1.list" : {
-        "request" : {
-          "$ref" : "QueryDto"
-        },
-        "response" : {
-          "$ref" : "EntityListDto"
-        }
-      },
       "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob" : {
       },
-      "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl" : {
+      "com.google.cloud.backend.spi.BlobEndpoint.getUploadUrl" : {
         "response" : {
           "$ref" : "BlobAccess"
         }
       },
-      "com.google.cloud.backend.spi.BlobEndpoint.getUploadUrl" : {
+      "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl" : {
         "response" : {
           "$ref" : "BlobAccess"
         }

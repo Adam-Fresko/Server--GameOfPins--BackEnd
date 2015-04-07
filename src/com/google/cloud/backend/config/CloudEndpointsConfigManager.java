@@ -72,12 +72,24 @@ public class CloudEndpointsConfigManager {
       List<String> audiences) {
     Entity config = getEndpointEntity(endpointClass);
     
-    clientIds.clear();
-    clientIds.add("243586188654-u0hq4usr50sc50uk5qnd3opshik5e3jc.apps.googleusercontent.com");
     
-    clientIds.add("243586188654-rdjo1l05kbhc8c4f7sk7b69ae8e6i09o.apps.googleusercontent.com");
+    /*
+    clientIds.add("243586188654-u0hq4usr50sc50uk5qnd3opshik5e3jc.apps.googleusercontent.com"); // com.deadswine.game.of.pins.admin // eclipse pc // nie działa??
+    // clientIds.add("243586188654-rdjo1l05kbhc8c4f7sk7b69ae8e6i09o.apps.googleusercontent.com");
+    //  243586188654-gr8ajhs8cnmv81ksac912gcrod7u4852.apps.googleusercontent.com // nie działa 
     
     
+     clientIds.add("243586188654-gr8ajhs8cnmv81ksac912gcrod7u4852.apps.googleusercontent.com"); //com.deadswine.smart.pins.game //  eclipse pc 
+     clientIds.add("243586188654-gr8ajhs8cnmv81ksac912gcrod7u4852.apps.googleusercontent.com"); //com.deadswine.smart.pins.game // eclipse pc 
+     
+     clientIds.add("243586188654-bmtjoilqf8758rf22kdn05g16aaungs6.apps.googleusercontent.com"); // com.deadswine.game.of.pins.admin // AS MAC //  SHA1 = 79:7F:56:CD:9A:A9:61:1F:82:00:64:B1:38:0A:C3:36:70:BA:65:23 
+     
+    
+     clientIds.add("243586188654-rdjo1l05kbhc8c4f7sk7b69ae8e6i09o.apps.googleusercontent.com"); // com.deadswine.smart.pins.game // eclipse pc // działa na telefonie instalowane z eclipse na pc
+     */
+     
+    
+     
     
     config.setProperty(CLIENT_IDS, clientIds);
     config.setProperty(AUDIENCES, audiences);
