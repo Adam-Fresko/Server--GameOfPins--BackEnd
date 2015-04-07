@@ -192,6 +192,7 @@ public class BackendConfigManager {
     if (!StringUtility.isNullOrEmpty(audience)) {
       clientIds.add(audience);
       audiences.add(audience);
+      audiences.add(audience);
     } else {
       audiences.add(new String());
     }
