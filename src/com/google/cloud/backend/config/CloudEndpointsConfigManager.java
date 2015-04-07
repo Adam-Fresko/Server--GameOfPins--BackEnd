@@ -79,11 +79,11 @@ public class CloudEndpointsConfigManager {
      
      
      
- //   clientIds.add("243586188654-rtnld0c2b6gbbun3qjoh1ftmfvddbd33.apps.googleusercontent.com");//  // com.deadswine.game.of.pins.game //TODO DZIAŁA - ECLIPSE PC - WERSJA POKAZOWA
+   clientIds.add("243586188654-rtnld0c2b6gbbun3qjoh1ftmfvddbd33.apps.googleusercontent.com");//  // com.deadswine.game.of.pins.game //TODO DZIAŁA - ECLIPSE PC - WERSJA POKAZOWA
       
- // clientIds.add("243586188654-bmtjoilqf8758rf22kdn05g16aaungs6.apps.googleusercontent.com"); // com.deadswine.game.of.pins.admin   //TODO   DZIAŁA!! AS _ MAC _ ANDY!
+ clientIds.add("243586188654-bmtjoilqf8758rf22kdn05g16aaungs6.apps.googleusercontent.com"); // com.deadswine.game.of.pins.admin   //TODO   DZIAŁA!! AS _ MAC _ ANDY!
       
-     
+ clientIds.add("id_cipa"); 
       
       
    //TODO     clientIds.add("243586188654-t3a8pff62bcuncbddekfbqj2qqvi2ol0.apps.googleusercontent.com"); // CHROMNE????

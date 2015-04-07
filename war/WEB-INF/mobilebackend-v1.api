@@ -201,31 +201,6 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "mobilebackend.blobEndpoint.deleteBlob" : {
-      "path" : "blobs/{bucketName}/{objectPath}",
-      "httpMethod" : "DELETE",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob",
-      "request" : {
-        "parameters" : {
-          "bucketName" : {
-            "type" : "string",
-            "required" : true
-          },
-          "objectPath" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
     "mobilebackend.blobEndpoint.getDownloadUrl" : {
       "path" : "blobs/downloads/{bucketName}/{objectPath}",
       "httpMethod" : "GET",
@@ -290,6 +265,31 @@
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "mobilebackend.blobEndpoint.deleteBlob" : {
+      "path" : "blobs/{bucketName}/{objectPath}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob",
+      "request" : {
+        "parameters" : {
+          "bucketName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "objectPath" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
       }
     }
   },
@@ -499,8 +499,6 @@
           "$ref" : "EntityListDto"
         }
       },
-      "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob" : {
-      },
       "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl" : {
         "response" : {
           "$ref" : "BlobAccess"
@@ -510,6 +508,8 @@
         "response" : {
           "$ref" : "BlobAccess"
         }
+      },
+      "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob" : {
       }
     }
   }
