@@ -76,20 +76,17 @@ public class CloudEndpointsConfigManager {
     //DZIAŁA! wersja pokazowa 243586188654-rtnld0c2b6gbbun3qjoh1ftmfvddbd33.apps.googleusercontent.com
      
      
-     
+    clientIds.clear();
      
      
    clientIds.add("243586188654-rtnld0c2b6gbbun3qjoh1ftmfvddbd33.apps.googleusercontent.com");//  // com.deadswine.game.of.pins.game //TODO DZIAŁA - ECLIPSE PC - WERSJA POKAZOWA
       
  clientIds.add("243586188654-bmtjoilqf8758rf22kdn05g16aaungs6.apps.googleusercontent.com"); // com.deadswine.game.of.pins.admin   //TODO   DZIAŁA!! AS _ MAC _ ANDY!
-      
- clientIds.add("id_cipa"); 
-      
-      
-   //TODO     clientIds.add("243586188654-t3a8pff62bcuncbddekfbqj2qqvi2ol0.apps.googleusercontent.com"); // CHROMNE????
+
+ clientIds.add("243586188654-t3a8pff62bcuncbddekfbqj2qqvi2ol0.apps.googleusercontent.com"); // CHROMNE????
       
      
-//     "crx_key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjzQPSfGVkqzNxQvjyd28ZNYIFfw66rJUiqyEqb3kLQJ04S7Iqo21M+7+u+mxXHNCkXh5mhdFuY4gSbe3fgNC89NqkW5inmQLbCtoIMtcFvVHcu0N7BNU+spKK514Ad/EiG395KvTpXXLdFN6scNZQz/TjOB8cNk0UauQMZvJm7KCyszllYsfhtbW//IHAJjs3UMDso5mOB4bvursXzso3XT7lWB77ck+XafDEVki3o/P2uUQkLnA1zjG6d3+GTDx+HJKj5+uvadTJqvWfQ/aL5cvlmxBNjmaWJWzKnyw9k2F531O95hTSkyGtMo499TvhdQ0TcDQB+q1fwUbcKyRdwIDAQAB"
+//"crx_key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjzQPSfGVkqzNxQvjyd28ZNYIFfw66rJUiqyEqb3kLQJ04S7Iqo21M+7+u+mxXHNCkXh5mhdFuY4gSbe3fgNC89NqkW5inmQLbCtoIMtcFvVHcu0N7BNU+spKK514Ad/EiG395KvTpXXLdFN6scNZQz/TjOB8cNk0UauQMZvJm7KCyszllYsfhtbW//IHAJjs3UMDso5mOB4bvursXzso3XT7lWB77ck+XafDEVki3o/P2uUQkLnA1zjG6d3+GTDx+HJKj5+uvadTJqvWfQ/aL5cvlmxBNjmaWJWzKnyw9k2F531O95hTSkyGtMo499TvhdQ0TcDQB+q1fwUbcKyRdwIDAQAB"
      
      
      

@@ -201,6 +201,31 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "mobilebackend.blobEndpoint.getDownloadUrl" : {
+      "path" : "blobs/downloads/{bucketName}/{objectPath}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl",
+      "request" : {
+        "parameters" : {
+          "bucketName" : {
+            "type" : "string",
+            "required" : true
+          },
+          "objectPath" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "mobilebackend.blobEndpoint.deleteBlob" : {
       "path" : "blobs/{bucketName}/{objectPath}",
       "httpMethod" : "DELETE",
@@ -259,31 +284,6 @@
           "contentType" : {
             "type" : "string",
             "required" : false
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "mobilebackend.blobEndpoint.getDownloadUrl" : {
-      "path" : "blobs/downloads/{bucketName}/{objectPath}",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl",
-      "request" : {
-        "parameters" : {
-          "bucketName" : {
-            "type" : "string",
-            "required" : true
-          },
-          "objectPath" : {
-            "type" : "string",
-            "required" : true
           }
         },
         "body" : "empty"
@@ -499,14 +499,14 @@
           "$ref" : "EntityListDto"
         }
       },
-      "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob" : {
-      },
-      "com.google.cloud.backend.spi.BlobEndpoint.getUploadUrl" : {
+      "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl" : {
         "response" : {
           "$ref" : "BlobAccess"
         }
       },
-      "com.google.cloud.backend.spi.BlobEndpoint.getDownloadUrl" : {
+      "com.google.cloud.backend.spi.BlobEndpoint.deleteBlob" : {
+      },
+      "com.google.cloud.backend.spi.BlobEndpoint.getUploadUrl" : {
         "response" : {
           "$ref" : "BlobAccess"
         }
