@@ -93,7 +93,7 @@ public class SecurityChecker {
       return;
     case CLIENT_ID: // error if User is null
       if (user == null) {
-        throw new UnauthorizedException("Unauthenticated calls are not allowed");
+        throw new UnauthorizedException("Unauthenticated calls are not allowed CIPUCHA!@!!!");
       } else {
         return;
       }
